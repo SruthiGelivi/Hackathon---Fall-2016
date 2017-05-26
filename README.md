@@ -6,4 +6,5 @@ This a Hackathon scoring web application which helps hackthon judges to grade th
 
 
 TECHNOLOGIES USED : HTML, CSS, JavaScript
+
 Database : Mongodb
