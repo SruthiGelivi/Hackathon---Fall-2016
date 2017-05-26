@@ -1,0 +1,65 @@
+<html ng-app="Hackathon" ng-controller="HackathonController" class="h1">
+<head >
+    <title>User Details</title>
+
+</head>
+<body>
+<div class="blur"></div>
+<span>
+        <div class="main1" align="center">
+        <form>
+            <div class="main2" align="center">
+                <div class="b"><h1>Welcome to Hackathon!!</h1></div>
+            <h1>Please Register Here</h1>
+                <div class="m1" align="center"><span class="form_hint"></span>
+                    <div class="a1" align="center"><input type="text" class="text1" name="fname" placeholder="Enter your First Name" ng-model="formData.fname" required /></div>
+<br><br></div>
+                <div class="m2" align="center"><span class="form_hint"></span>
+                    <div class="a1" align="center"> <input type="text" class="text1" name="lname" ng-model="formData.lname" placeholder="Enter your Last Name" required /></div>
+                    <br><br></div>
+                <div class="m3" align="center"><span class="form_hint"></span>
+                    <div class="a1" align="center"> <input type="text" class="text1" name="email" ng-model="formData.email" placeholder="Enter your Company Name" required /></div>
+                        <br><br></div>
+                    <div class="m3" align="center"><span class="form_hint"></span>
+                    <div class="a1" align="center"> <input type="email" class="text1" name="email" ng-model="formData.email" placeholder="Enter your Email-Id" required /></div>
+                        <br><br></div>
+                <div class="m4" align="center"> <span class="form_hint"></span>
+                    <div class="a1" align="center"> <input type="password" name="password" class="text1" ng-model="formData.password" placeholder="Enter your Password"></div>
+                    <br><br></div>
+                <div class="m5" align="center"><span class="form_hint"></span>
+                    <div class="a1" align="center"> <input type="password" name="cpassword" class="text1" ng-model="formData.cpassword" placeholder="Confirm your Password"></div>
+                    <br><br></div>
+           <div class="m6" align="center"> <input type="submit" class="button" onclick="register()" name="Sign In"  value="Register"/>
+                          </div>
+                <div class="main3" align="center">
+                    <input type="button" value="LogIn" class="button" onclick="gologin()"/>
+                    <script>
+                        function register()
+                        {alert("Registered Successfully");}
+                        function gologin() {
+
+                            window.location='login.html';
+                        }
+                    </script>
+                </div>
+                <div class="main4" align="center">
+                    <input type="button" value="Admin-LogIn" class="button" onclick="go()"/>
+                    <script>
+                          function go() {
+                            window.location='adminlogin.html';
+                        }
+                    </script>
+                </div>
+            </div>
+        </form>
+
+            </div>
+    </span>
+
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" href="indexStyling.css" type="text/css">
+</body>
+</html>

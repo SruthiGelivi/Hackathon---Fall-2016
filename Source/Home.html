@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="h1">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+    <script src="app.js"></script>
+    <script src="nodejs.js"></script>
+    <link rel="stylesheet" href="HomeStyling.css" type="text/css">
+</head>
+<body ng-app="Hackathon" id="body">
+<div class="blur"></div>
+<span>
+<div class="main">
+<div ng-controller="HackathonController" align="center">
+ <input type="button" class="bu"  onclick="logout()"  style="position:absolute; right:10px; top:20px; width:80px;height:30px;" value="Logout" >
+    <script type="text/javascript">
+        function logout() {
+            window.location='index.html';
+        }
+
+        </script>
+    <input type="button" value="View Team Details" class="cl" align="center" ng-Click="disp()"/><br><br>
+    <div id="container" class="container" align="center">
+
+    </div><br>
+    <form method="post" action="http://127.0.0.1:8081/delete" autocomplete="on" align="center">
+
+        <input type="text" class="text2" style="width:200px;" name="id1" id="id1" placeholder="Enter Team ID to Disqualify" /><br>
+<input type="submit" class="cl" align="center" value="Disqualify the Team"  ><br>
+        </form>
+    <script>    function sync() {
+        document.getElementById('id2').value=document.getElementById('id1').value;
+    }
+    </script>
+
+    <form method="post" action="http://127.0.0.1:8081/update" align="center">
+<br><br><br>
+
+    <div class="a1"><input onblur="findTotal()" type="text" placeholder="Enter ID to Update Scores" class="i1" id="id2" name="id2"  required /></div><br>
+
+
+
+ <div class="a1"><label>    Team Name </label><input type="text" style="width:100px" class="text1" name="tname" id="tname"  required /></div><br>
+      <div class="a1"><label>     User Experience </label><input onblur="findTotal()"   placeholder="/10"  type="text" class="text1" name="qty1" id="qty1"  required /></div><br>
+
+
+      <div class="a1"> <label>   Innovation </label><input onblur="findTotal()"   placeholder="/10" type="text" class="text1" name="qty2" id="qty2"   required /></div><br>
+
+
+       <div class="a1"> <label>  Collaboration </label><input  onblur="findTotal()"   placeholder="/10" type="text" name="qty3" id="qty3" class="text1" required/></div><br>
+         <div class="a1"><label>Originality</label><input  onblur="findTotal()"   placeholder="/10" type="text" name="qty4" id="qty4" class="text1" required/></div><br>
+          <div class="a1"> <label> Code Quality </label> <input onblur="findTotal()"   placeholder="/10" type="text" class="text1" name="qty5" id="qty5" required /></div><br>
+       <div class="a1"><label>   Design </label><input onblur="findTotal()"    placeholder="/10" type="text" class="text1" name="qty6" id="qty6"   required /></div><br>
+
+     <div class="a1"> <label> Functionality </label><input onblur="findTotal()"   placeholder="/10" type="text" name="qty7" id="qty7" class="text1"  required/></div><br>
+       <div class="a1"><label>    Integration of Technology </label><input onblur="findTotal()"   placeholder="/10" type="text" name="qty8" id="qty8" class="text1"  required/><div class="b2" style="padding-left:200px"><label  style="position:relative;left:140px; top:-15px;">=</label><input type="text"  name="total" id="total" class="text3" ng-model="formData.total" required/></div></div><br>
+
+  <script type="text/javascript">
+                function findTotal(){
+                    var arr = document.getElementsByClassName('text1');
+                    var tot=0;
+                    for(var i=0;i<arr.length;i++){
+                        if(parseInt(arr[i].value))
+                            tot += parseInt(arr[i].value);
+                    }
+                    document.getElementById('total').value = tot;
+
+                }
+
+            </script>
+           <div class="a1"> <label>You give this team a total score of </label><input type="text"   placeholder="/80" name="total1" id="total1" class="text1"  required/>
+            </div><br>
+         <div class="m1"><span class="form_hint"></span>
+                <div class="a1" > <label style="position: relative; left:180px; top:-50px;">Comment </label><textarea style="width:250px; height:100px;position:relative; top:20px;left:260px" class="text1" name="comment" placeholder="Enter Comment" id="comment" ng-model="formData.comment"></textarea></div>
+                <br><br></div>
+        <input type="submit" class="il" align="center" value="Update Team Details" ><br><br>
+         <input type="submit" class="il" align="center" value="Get Results" onclick="result()" ><br>
+        <script type="text/javascript">
+        function result(){
+         window.location='dynamicChart.html';
+        }
+</script>
+    </form>
+</div>
+</div>
+    </span>
+
+</body>
+</html>

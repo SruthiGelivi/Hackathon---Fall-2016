@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="h1">
+<head>
+    <meta charset="UTF-8">
+    <title>Team Details</title>
+    <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+    <script src="app.js"></script>
+    <script src="nodejs.js"></script>
+    <link rel="stylesheet" href="AdminHomeStyling.css" type="text/css">
+</head>
+<body ng-app="Hackathon" id="body">
+<div class="blur"></div>
+<span>
+<div class="main">
+<div ng-controller="HackathonController" align="center">
+     <input type="button" class="bu"  onclick="logout()"  style="position:absolute; right:10px; top:20px; width:80px;height:30px;" value="Logout" >
+    <script type="text/javascript">
+        function logout() {
+            window.location='index.html';
+        }
+
+        </script>
+<form class="contact_form"  ng-submit="insertData()" name="contact_form">
+
+    <input type="text" style="width:170px; position:absolute;top:80px;left:580px" class="text1" name="tname" placeholder="Enter New Team Name" id="Team_Name" ng-model="formData.Team_Name"/><br>
+<input style="width: 100px;" type="submit" class="button" name="Submit" value="Add Team"/>
+    <input type="button" value="View Team Details" style="position:absolute;top:160px;left:600px" class="cl" ng-Click="disp()"/><br><br><br><br><br><br><br><br><br>
+    <div id="container" class="container" align="center">
+
+    </div><br></form>
+    <form method="post" action="http://127.0.0.1:8081/delete" autocomplete="on" align="center">
+              <input type="text" class="text2" style="width:200px; position:relative; top:30px; left:10px;" name="id1" id="id1" placeholder="Enter Team ID to Delete" /><br>
+ <input type="submit" style="position: relative;top:30px; left:10px;" class="cl" align="center" value="Delete the Team"  ><br><br><br><br>
+    </form>
+    <script>    function sync() {
+        document.getElementById('id2').value=document.getElementById('id1').value;
+    }
+    </script>
+ <input type="submit" style="position: relative;top:30px; left:10px;" class="cl" align="center" value="View Final Scores" onclick="result()" />
+    <script>
+        function result(){
+            window.location='dynamicChart.html';
+        }
+        </script>
+
+</div>
+
+</div>
+
+    </span>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+<body background-image="background.jpg">
+	<div class="blur"></div>
+	<span>
+ <link rel="stylesheet" href="ChartStyling.css" type="text/css">
+			<h1 class="span" style="color:white; text-align: center"> Final Scores </h1>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+		<input type="button" class="bu"  onclick="logout()"  style="position:absolute; right:10px; top:20px; width:80px;height:30px;" value="Logout" >
+    <script type="text/javascript">
+        function logout() {
+			window.location='index.html';
+		}
+
+        </script>
+	<div id="chart_div" style="width: 1000px; height: 350px;padding-left:150px;padding-top:100px;"></div>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script>
+    google.load("visualization", "1.1", {
+		packages: ["corechart"]
+	});
+	google.setOnLoadCallback(drawChart);
+
+
+	function drawChart() {
+
+		var data = google.visualization.arrayToDataTable([
+			['Team', 'Scores'],
+			['TechKnights', 73],
+
+			['TechMinions', 27],
+			['CodeBreakers', 50],
+			['RooHackers', 20],
+			['CrazyCoders', 45]
+
+		]);
+
+		var options = {
+			animation: {
+				duration: 1500,
+				startup: true
+			}
+		};
+
+
+		chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+		chart.draw(data, options);
+	}
+</script>
+
+<div id="piechart_3d" style="width: 900px; height: 500px; left:400px;top:200px;"></div>
+			</span>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html ng-app="Hackathon" ng-controller="HackathonController" class="h1">
+<head >
+    <title>Login</title>
+
+</head>
+<body>
+<div class="blur"></div>
+<span>
+        <div class="main1" align="center">
+        <form class="contact_form"  ng-submit="insertData()" name="contact_form">
+            <div class="main2" align="center">
+               <div class="b"> <h1 >Login</h1></div>
+
+                   <div class="m3" align="center"><span class="form_hint"></span>
+                    <div class="a1" align="center"> <input type="email" class="text1" name="email" ng-model="formData.email" placeholder="Enter your Email-Id" required /></div>
+                        <br><br></div>
+                <div class="m4" align="center"> <span class="form_hint"></span>
+                    <div class="a1" align="center"> <input type="password" name="password" class="text1" ng-model="formData.password" placeholder="Enter your Password"></div>
+                    <br><br></div>
+                <div class="main3">
+                    <input type="button" value="LogIn" class="button" onclick="go()"/>
+                    <script>
+                        function go() {
+                            window.location='score.html';
+                        }
+                    </script>
+                </div>
+            </div>
+        </form>
+
+            </div>
+    </span>
+
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" href="loginStyling.css" type="text/css">
+</body>
+</html>
